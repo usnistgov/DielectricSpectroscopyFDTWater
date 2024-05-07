@@ -9,9 +9,22 @@ https://www.nist.gov/programs-projects/measuring-intermolecular-interactions-ele
 
 Contact information:
 
-Rebecca Bone, Materials Science and Engineering Division, Material Measurement Laboratory, National Institute of Standards and Technology, rebecca.bone@nist.gov
-Kathleen Schwarz, Materials Science and Engineering Division, Material Measurement Laboratory, National Institute of Standards and Technology, kathleen.schwarz@nist.gov
-Ravishankar Sundararaman, Rensselaer Polytechnic Institute, sundar@rpi.edu
+Rebecca Bone
+Materials Science and Engineering Division
+Material Measurement Laboratory
+National Institute of Standards and Technology
+rebecca.bone@nist.gov
+
+Kathleen Schwarz
+Materials Science and Engineering Division
+Material Measurement Laboratory
+National Institute of Standards and Technology
+kathleen.schwarz@nist.gov
+
+Ravishankar Sundararaman
+Department of Materials Science and Engineering
+Rensselaer Polytechnic Institute
+sundar@rpi.edu
 
 
 Folder contents:
