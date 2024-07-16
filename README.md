@@ -33,8 +33,8 @@ Folder contents:
 2.  Steps to grab the polarization
 3.  Script to calculate the dielectric spectrum
 
-Additional Input Files
-spc/e
-spc/fw
-amoeba09 methanol
+Additional Input Files:
+spc/e;
+spc/fw;
+amoeba09 methanol;
 amoeba09 formamide
