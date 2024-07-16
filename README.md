@@ -1,6 +1,6 @@
 # DielectricSpectroscopyFDTWater
 Within this directory are the tools required to reproduce the work performed in the paper titled:
-"6 Peaks Over 6 Decades of Frequency: Polarizable Force Fields are Necessary to Reproduce Water's Full Dielectric Spectrum".
+"A New Method to Calculate Broadband Dielectric Spectra of Solvents from Molecular Dynamics Simulations Demonstrated with Polarizable Force Fields".
 
 To cite this code, please cite our paper, listed above.
 
@@ -31,4 +31,10 @@ Folder contents:
 
 1.  Tinker inputs for water simulation
 2.  Steps to grab the polarization
-3.  Script to calculate the dielectric spectrum 
+3.  Script to calculate the dielectric spectrum
+
+Additional Input Files
+spc/e
+spc/fw
+amoeba09 methanol
+amoeba09 formamide
