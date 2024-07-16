@@ -1,0 +1,65 @@
+variable           T index   298.15 
+variable           P index 1
+label             START
+variable Q equal 0.7*$T
+log log.spce.$T.$P
+
+units           real
+atom_style      full
+
+read_data       data.lmp
+
+set type 1 charge  0.4238
+set type 2 charge -0.8476
+
+pair_style      lj/cut/coul/long 12.0 12.0
+pair_coeff      * * 0.0     1.0
+pair_coeff      2 2 0.15535 3.166
+kspace_style    pppm 1.0e-6
+
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  none
+improper_style  none
+
+bond_coeff      1 1000.00 1.000
+angle_coeff     1 100.0 109.47
+
+# need to set bond/angle inclusion to > 0.0
+# so that intramolecular pairs are included in neighbor lists (required for second ADF)
+special_bonds   lj/coul 1.0e-100 1.0e-100 1.0
+
+neighbor        2.0 bin
+timestep        2
+neigh_modify    every 1 delay 2 check yes
+
+fix             1 all shake 0.0001 20 0 b 1 a 1
+velocity all create $Q 6244333
+fix 11 all npt temp $T $T 1000 iso $P $P 1000
+thermo 10000
+thermo_style custom step lx ly lz pe etotal press vol pxx pyy pzz temp density
+run 5000000
+unfix 11
+
+#ids value = once or nfreq or every
+# once = assign chunk IDs to atoms only once, they persist thereafter
+#nfreq = assign chunk IDs to atoms only once every Nfreq steps (if invoked by fix ave/chunk which sets Nfreq)
+# every = assign chunk IDs to atoms whenever invoked
+
+reset_timestep 0
+fix 11 all nvt temp $T $T 100
+
+compute cc1 all chunk/atom bin/sphere 10 10 10 0 10 1 discard no nchunk once 
+compute myChunk all dipole/chunk cc1
+fix 121 all ave/time 10 1 10 c_myChunk[*] file tmp.out mode vector
+fix 12 all ave/time 1 1 1 c_myChunk[*] file tmp.out.1fs mode vector
+thermo 10000
+thermo_style custom step lx ly lz pe etotal press vol pxx pyy pzz temp density
+
+# play with adding efield
+variable oscillate equal 0.01*sin(step/2*PI/12500)
+fix kick all efield 0.0 0.0 v_oscillate
+
+dump 21 all custom 100 tmp.xyz.1fs id mol type q x y z
+run 2500000
+

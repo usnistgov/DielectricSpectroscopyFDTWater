@@ -1,0 +1,191 @@
+
+      ##############################
+      ##                          ##
+      ##  Force Field Definition  ##
+      ##                          ##
+      ##############################
+
+
+forcefield              AMOEBA-2009
+
+bond-cubic              -2.55
+bond-quartic            3.793125
+angle-cubic             -0.014
+angle-quartic           0.000056
+angle-pentic            -0.0000007
+angle-sextic            0.000000022
+opbendtype              ALLINGER
+opbend-cubic            -0.014
+opbend-quartic          0.000056
+opbend-pentic           -0.0000007
+opbend-sextic           0.000000022
+torsionunit             0.5
+vdwtype                 BUFFERED-14-7
+radiusrule              CUBIC-MEAN
+radiustype              R-MIN
+radiussize              DIAMETER
+epsilonrule             HHG
+dielectric              1.0
+polarization            MUTUAL
+vdw-12-scale            0.0
+vdw-13-scale            0.0
+vdw-14-scale            1.0
+vdw-15-scale            1.0
+mpole-12-scale          0.0
+mpole-13-scale          0.0
+mpole-14-scale          0.4
+mpole-15-scale          0.8
+polar-12-scale          0.0
+polar-13-scale          0.0
+polar-14-scale          1.0
+polar-15-scale          1.0
+polar-12-intra          0.0
+polar-13-intra          0.0
+polar-14-intra          0.5
+polar-15-intra          1.0
+direct-11-scale         0.0
+direct-12-scale         1.0
+direct-13-scale         1.0
+direct-14-scale         1.0
+mutual-11-scale         1.0
+mutual-12-scale         1.0
+mutual-13-scale         1.0
+mutual-14-scale         1.0
+
+
+      #############################
+      ##                         ##
+      ##  Literature References  ##
+      ##                         ##
+      #############################
+
+
+P. Ren and J. W. Ponder, "Polarizable Atomic Multipole Intermolecular
+Potentials for Small Organic Molecules", in preparation.
+
+J. W. Ponder and D. A. Case, "Force Fields for Protein Simulation",
+Adv. Prot. Chem., 66, 27-85 (2003)
+
+P. Ren and J. W. Ponder, "Polarizable Atomic Multipole Water Model for
+Molecular Mechanics Simulation", J. Phys. Chem. B, 107, 5933-5947 (2003)
+
+P. Ren and J. W. Ponder, "A Consistent Treatment of Inter- and
+Intramolecular Polarization in Molecular Mechanics Calculations",
+J. Comput. Chem., 23, 1497-1506 (2002)
+
+Monovalent ion parameters taken from Zhi Wang, Ph.D. thesis, Department
+of Chemistry, Washington University in St. Louis, May 2018; available
+from https://dasher.wustl.edu/ponder/
+
+
+      #############################
+      ##                         ##
+      ##  Atom Type Definitions  ##
+      ##                         ##
+      #############################
+
+
+atom         1   1    O     "Methanol O"                   8    15.999    2
+atom         2   2    H     "Methanol HO"                  1     1.008    1
+atom         3   3    C     "Methanol CH3"                 6    12.011    4
+atom         4   4    H     "Methanol H3C"                 1     1.008    1
+
+
+      ################################
+      ##                            ##
+      ##  Van der Waals Parameters  ##
+      ##                            ##
+      ################################
+
+
+vdw          1               3.4050     0.1100
+vdw          2               2.6550     0.0135      0.910
+vdw          3               3.7600     0.1010
+vdw          4               2.8700     0.0240      0.910
+
+
+      ##################################
+      ##                              ##
+      ##  Bond Stretching Parameters  ##
+      ##                              ##
+      ##################################
+
+
+bond         1   2          615.90     0.9670
+bond         1   3          500.10     1.4130
+bond         3   4          385.00     1.1120
+
+
+      ################################
+      ##                            ##
+      ##  Angle Bending Parameters  ##
+      ##                            ##
+      ################################
+
+
+angle        2   1   3      64.96     106.80
+angle        4   3   4      45.57     107.60     107.80     109.47
+angle        1   3   4      60.99     110.00
+
+
+      ################################
+      ##                            ##
+      ##   Stretch-Bend Parameters  ##
+      ##                            ##
+      ################################
+
+
+strbnd       3   1   2      38.00      -4.50
+strbnd       4   3   1      -4.50      38.00
+
+
+      ############################
+      ##                        ##
+      ##  Torsional Parameters  ##
+      ##                        ##
+      ############################
+
+
+torsion      2   1   3   4      0.000 0.0 1   0.000 180.0 2   0.274 0.0 3
+
+
+      ###################################
+      ##                               ##
+      ##  Atomic Multipole Parameters  ##
+      ##                               ##
+      ###################################
+
+
+multipole    1   2   3                 -0.53771
+                                        0.23239    0.00000    0.14256
+                                        0.21444
+                                        0.00000   -0.55826
+                                       -0.21095    0.00000    0.34382
+multipole    2   1   3                  0.24154
+                                       -0.04246    0.00000    0.00000
+                                       -0.06223
+                                        0.00000   -0.12152
+                                       -0.02736    0.00000    0.18375
+multipole    3   1   2                  0.17575
+                                        0.00000    0.00000    0.57127
+                                       -0.44733
+                                        0.00000   -0.44733
+                                        0.00000    0.00000    0.89466
+multipole    4   3   1                  0.04014
+                                        0.00000    0.00000   -0.10668
+                                       -0.00544
+                                        0.00000   -0.02734
+                                       -0.01699    0.00000    0.03278
+
+
+      ########################################
+      ##                                    ##
+      ##  Dipole Polarizability Parameters  ##
+      ##                                    ##
+      ########################################
+
+
+polarize     1          0.8370     0.3900     2   3
+polarize     2          0.4960     0.3900     1
+polarize     3          1.3340     0.3900     1   4
+polarize     4          0.4960     0.3900     3
