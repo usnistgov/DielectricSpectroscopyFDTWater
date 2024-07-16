@@ -29,12 +29,8 @@ sundar@rpi.edu
 
 Folder contents:
 
-1.  Tinker inputs for water simulation
-2.  Steps to grab the polarization
+1a.  Tinker inputs for MD simulations
+1b.  Lammps inputs for MD simulations
+2.  Steps to grab the polarization from Tinker (not needed for Lammps because it is already in the correct format)
 3.  Script to calculate the dielectric spectrum
 
-Additional Input Files:
-spc/e;
-spc/fw;
-amoeba09 methanol;
-amoeba09 formamide
